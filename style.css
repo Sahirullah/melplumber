@@ -70,6 +70,10 @@ body {
     position: relative;
 }
 
+.dropdown-toggle {
+    pointer-events: auto;
+}
+
 .dropdown-toggle::after {
     content: '▼';
     font-size: 10px;
@@ -94,19 +98,25 @@ body {
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 2000;
     margin-top: 10px;
     border: 1px solid #333;
+    padding: 0;
+    pointer-events: none;
 }
 
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    pointer-events: auto;
 }
 
 .dropdown-menu li {
     border-bottom: 1px solid #333;
+    margin: 0;
+    padding: 0;
+    pointer-events: auto;
 }
 
 .dropdown-menu li:last-child {
@@ -121,6 +131,8 @@ body {
     font-weight: 400;
     font-size: 14px;
     transition: all 0.3s ease;
+    cursor: pointer;
+    pointer-events: auto;
 }
 
 .dropdown-menu a:hover {
@@ -2040,6 +2052,7 @@ body {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
+        padding: 0;
     }
 
     .dropdown:hover .dropdown-menu {
@@ -2047,12 +2060,14 @@ body {
     }
 
     .dropdown-menu a {
-        padding: 10px 20px 10px 40px;
+        padding: 12px 20px 12px 40px;
         font-size: 14px;
+        cursor: pointer;
     }
 
     .dropdown-menu a:hover {
         padding-left: 45px;
+        background-color: #00a8e8;
     }
 
     .dropdown-toggle::after {
@@ -2242,5 +2257,169 @@ body.menu-open {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* ===== SERVICE DETAILS PAGE STYLES ===== */
+
+.service-details {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.service-details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.service-details-content {
+    flex: 1;
+}
+
+.service-details-content h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.service-details-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.service-details-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.service-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.service-list li {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.service-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00a8e8;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.service-details-image {
+    flex: 1;
+}
+
+.service-details-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-cta {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.service-cta h3 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.service-cta p {
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 20px;
+}
+
+.service-cta .cta-button {
+    background-color: #00a8e8;
+    margin-top: 0;
+}
+
+/* Responsive Design for Service Details */
+@media (max-width: 768px) {
+    .service-details {
+        padding: 60px 20px;
+    }
+
+    .service-details-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .service-details-content h2 {
+        font-size: 32px;
+    }
+
+    .service-details-content h3 {
+        font-size: 20px;
+    }
+
+    .service-details-content p {
+        font-size: 15px;
+    }
+
+    .service-list li {
+        font-size: 14px;
+    }
+
+    .service-cta {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-details {
+        padding: 40px 20px;
+    }
+
+    .service-details-content h2 {
+        font-size: 24px;
+    }
+
+    .service-details-content h3 {
+        font-size: 18px;
+    }
+
+    .service-details-content p {
+        font-size: 14px;
+    }
+
+    .service-list li {
+        font-size: 13px;
+        padding-left: 20px;
+    }
+
+    .service-cta {
+        padding: 20px;
+    }
+
+    .service-cta .cta-button {
+        width: 100%;
     }
 }

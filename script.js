@@ -49,6 +49,19 @@ dropdownToggles.forEach(toggle => {
     });
 });
 
+// Close dropdown when clicking on a link
+const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
+dropdownLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        // Allow default link behavior
+        if (window.innerWidth <= 768) {
+            const dropdown = link.closest('.dropdown');
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+            dropdownMenu.style.maxHeight = '0';
+        }
+    });
+});
+
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
     const isClickInsideHeader = document.querySelector('.header').contains(e.target);
