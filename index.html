@@ -15,11 +15,28 @@
                 <img src="images/logo.png" alt="Mel Plumber Logo" class="logo">
             </div>
 
+            <!-- Hamburger Menu (Mobile) -->
+            <button class="hamburger-menu" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <!-- Navigation Links (Center) -->
             <nav class="header-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li class="dropdown">
+                        <a href="services.html" class="dropdown-toggle">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html#emergency">Emergency Plumbing Repair</a></li>
+                            <li><a href="services.html#drain">Drain Cleaning & Maintenance</a></li>
+                            <li><a href="services.html#installation">Installation & Upgrades</a></li>
+                            <li><a href="services.html#pipe">Pipe Repair & Replacement</a></li>
+                            <li><a href="services.html#water">Water Heater Services</a></li>
+                            <li><a href="services.html#fixtures">Bathroom & Kitchen Fixtures</a></li>
+                        </ul>
+                    </li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -57,7 +74,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="about">
+    <section class="about" data-animate="fade-in">
         <div class="about-container">
             <!-- Left Side - Text -->
             <div class="about-text">
@@ -80,14 +97,14 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing">
+    <section class="pricing" data-animate="fade-in">
         <div class="pricing-container">
             <h2>Our Pricing Plans</h2>
             <p class="pricing-subtitle">Choose the perfect plan for your plumbing needs</p>
 
             <div class="pricing-cards">
                 <!-- Card 1 - Basic -->
-                <div class="pricing-card">
+                <div class="pricing-card" data-animate="scale" data-delay="0.1s">
                     <h3>Basic Service</h3>
                     <div class="price">
                         <span class="currency">Rs</span>
@@ -104,7 +121,7 @@
                 </div>
 
                 <!-- Card 2 - Professional (Featured) -->
-                <div class="pricing-card featured">
+                <div class="pricing-card featured" data-animate="scale" data-delay="0.2s">
                     <div class="badge">Most Popular</div>
                     <h3>Professional Service</h3>
                     <div class="price">
@@ -123,7 +140,7 @@
                 </div>
 
                 <!-- Card 3 - Premium -->
-                <div class="pricing-card">
+                <div class="pricing-card" data-animate="scale" data-delay="0.3s">
                     <h3>Premium Package</h3>
                     <div class="price">
                         <span class="currency">Rs</span>
@@ -145,14 +162,14 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services">
+    <section class="services" data-animate="fade-in">
         <div class="services-container">
             <h2>Our Services</h2>
             <p class="services-subtitle">Professional plumbing solutions for all your needs</p>
 
             <div class="services-cards">
                 <!-- Service Card 1 -->
-                <div class="service-card">
+                <div class="service-card" data-animate="slide-in" data-delay="0.1s">
                     <div class="service-image">
                         <img src="images/services1.jpg" alt="Emergency Plumbing Repair">
                     </div>
@@ -164,7 +181,7 @@
                 </div>
 
                 <!-- Service Card 2 -->
-                <div class="service-card">
+                <div class="service-card" data-animate="slide-in" data-delay="0.2s">
                     <div class="service-image">
                         <img src="images/services2.jpg" alt="Drain Cleaning & Maintenance">
                     </div>
@@ -176,7 +193,7 @@
                 </div>
 
                 <!-- Service Card 3 -->
-                <div class="service-card">
+                <div class="service-card" data-animate="slide-in" data-delay="0.3s">
                     <div class="service-image">
                         <img src="images/Services.webp" alt="Installation & Upgrades">
                     </div>
@@ -191,7 +208,7 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
+    <section class="why-choose-us" data-animate="fade-in">
         <div class="why-container">
             <h2>Why Choose Mel Plumber?</h2>
             <p class="why-subtitle">Here's what sets us apart from the competition</p>
@@ -237,14 +254,14 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
+    <section class="testimonials" data-animate="fade-in">
         <div class="testimonials-container">
             <h2>What Our Customers Say</h2>
             <p class="testimonials-subtitle">Real reviews from satisfied clients</p>
 
             <div class="testimonials-cards">
                 <!-- Testimonial 1 -->
-                <div class="testimonial-card">
+                <div class="testimonial-card" data-animate="scale" data-delay="0.1s">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"Mel Plumber fixed our burst pipe in no time! The technician was professional, courteous, and the pricing was very reasonable. Highly recommended!"</p>
                     <div class="reviewer-info">
@@ -257,7 +274,7 @@
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="testimonial-card">
+                <div class="testimonial-card" data-animate="scale" data-delay="0.2s">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"We've been using Mel Plumber for our office building maintenance for 2 years. Their preventive maintenance has saved us thousands in potential repairs!"</p>
                     <div class="reviewer-info">
@@ -270,7 +287,7 @@
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="testimonial-card">
+                <div class="testimonial-card" data-animate="scale" data-delay="0.3s">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"Excellent service! They installed our new water heater and bathroom fixtures perfectly. The team was clean, efficient, and very professional throughout."</p>
                     <div class="reviewer-info">
@@ -284,6 +301,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
 
     <!-- Footer -->
     <footer class="footer">
