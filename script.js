@@ -71,32 +71,39 @@ document.addEventListener('keydown', (e) => {
 
 // ===== SCROLL ANIMATION FUNCTIONALITY =====
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+// Simple scroll animation using Intersection Observer
+const scrollAnimationObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
             const animationType = entry.target.getAttribute('data-animate');
-            
             if (animationType) {
                 entry.target.classList.add(animationType);
                 entry.target.classList.add('animated');
+                // Stop observing this element
+                scrollAnimationObserver.unobserve(entry.target);
             }
         }
     });
-}, observerOptions);
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
 
-// Observe all elements with data-animate attribute
-document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('[data-animate]');
-    animatedElements.forEach(element => {
-        observer.observe(element);
+// Start observing all elements with data-animate
+document.addEventListener('DOMContentLoaded', function() {
+    const elementsToAnimate = document.querySelectorAll('[data-animate]');
+    elementsToAnimate.forEach(function(element) {
+        scrollAnimationObserver.observe(element);
     });
 });
+
+// Also run on page load in case DOM is already loaded
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    const elementsToAnimate = document.querySelectorAll('[data-animate]');
+    elementsToAnimate.forEach(function(element) {
+        scrollAnimationObserver.observe(element);
+    });
+}
 
 // Handle window resize to maintain responsive behavior
 let resizeTimer;
